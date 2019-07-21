@@ -19,7 +19,8 @@ It exposes API's for :
 
 For now, creation of wallet is handled through admin.
 
-<h4>Requirements:<h4>
+<h4>Requirements:</h4>
+
 * Python==3.7.6
  
 * Django==2.2.3
