@@ -54,7 +54,7 @@ Server would be available at http://127.0.0.1:8000/
 
 ```python3 manage.py test```
 
-<h3>Demo:<h3>
+<h3>Demo:</h3>
 
 A demo is hosted on micro Amazon EC2 instance.
 
