@@ -47,10 +47,10 @@ class PromotionTests(TransactionTestCase):
 
         # Minimum balance validation.
         discount = PromotionHelper(
-            self.user).calculate_discount(self.PROMO_CODE, 1000)
+            self.user).calculate_discount(self.PROMO_CODE, 1000, self.wallet)
         self.assertFalse(discount['status'])
         discount = PromotionHelper(self.user).calculate_discount(
-            self.PROMO_CODE, self.RECHARGE_MINIMUM)
+            self.PROMO_CODE, self.RECHARGE_MINIMUM, self.wallet)
         self.assertTrue(discount['status'])
 
         # Discount value validation.
@@ -65,7 +65,7 @@ class PromotionTests(TransactionTestCase):
 
     def test_wallet_deposit_with_promo(self):
         discount = PromotionHelper(self.user).calculate_discount(
-            self.PROMO_CODE, self.RECHARGE_MINIMUM)
+            self.PROMO_CODE, self.RECHARGE_MINIMUM, self.wallet)
         self.assertTrue(discount['status'])
 
         self.wallet.apply_promo(

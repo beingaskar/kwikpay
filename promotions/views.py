@@ -19,7 +19,8 @@ class ValidatePromoCode(APIView):
 
         if promo_code and amount:
             data = PromotionHelper(
-                request.user).calculate_discount(promo_code, amount)
+                request.user).calculate_discount(
+                promo_code, amount, request.user.get_wallet())
             error_msg = None
             is_success = data['status']
         else:

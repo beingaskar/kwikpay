@@ -56,7 +56,8 @@ class DepositAmount(APIView):
         promo_value = None
         if promo_code:
             promo_value = PromotionHelper(
-                request.user).calculate_discount(promo_code, amount)
+                request.user).calculate_discount(
+                promo_code, amount, request.user.get_wallet())
             if not promo_value or not promo_value['status']:
                 success = False
                 error_msg = "Invalid promo code."

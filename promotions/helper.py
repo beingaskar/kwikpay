@@ -7,7 +7,7 @@ from django.db.models import Q
 from .models import PromotionRule
 from wallet.models import AppliedPromotion
 from .constants import (
-    COUPON_ACTIVE, MULTI_USE, DISCOUNT_TYPE_PERCENTAGE)
+    COUPON_ACTIVE, MULTI_USE, FIRST_RECHARGE_ONLY, DISCOUNT_TYPE_PERCENTAGE)
 
 
 class PromotionHelper(object):
@@ -44,10 +44,11 @@ class PromotionHelper(object):
 
         return value
 
-    def calculate_discount(self, code, amount):
+    def calculate_discount(self, code, amount, wallet):
         """ Return's allowed discount given the `code` and `amount`.
         :param code: str
         :param amount: float
+        :param wallet: Wallet Instance
         :return: dict
         """
 
@@ -74,6 +75,10 @@ class PromotionHelper(object):
 
         if promotion_rule:
             result['status'] = True
+
+            if promotion_rule.usage_type == FIRST_RECHARGE_ONLY:
+                if wallet.transaction_set.count() != 0:
+                    result['status'] = False
 
         if result['status']:
             count_redeemed_user = AppliedPromotion.objects.filter(

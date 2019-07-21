@@ -43,3 +43,6 @@ class WalletAdmin(NonEditableAdmin):
     list_display = ('id', 'user', 'name', 'balance')
 
     inlines = [TransactionInline]
+
+    def has_add_permission(self, request, obj=None):
+        return True
