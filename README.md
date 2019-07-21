@@ -62,4 +62,4 @@ http://ec2-3-17-206-5.us-east-2.compute.amazonaws.com/
 
 <h3>Postman collection :</h3>
  
- https://www.getpostman.com/collections/f271bd652fea9c9acd2f 
+https://www.getpostman.com/collections/2d05a02e039b4e599e2b
