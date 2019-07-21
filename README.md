@@ -1,12 +1,20 @@
 <h2>Wallet Service</h2>
 Wallet Service implemented with Python/ Django/ REST. 
+
 It exposes API's for :
+
 - Get Wallet Balance
+
 - Deposit to wallet (with and without promotional code)
+
 - Withdraw from wallet
+
 - Get wallet Mini-statement.
+
 - Validate Promotional Code.
+
 - List all registered accounts. (Admin)
+
 - List all transaction history (Paginated).
 
 For now, creation of wallet is handled through admin.
