@@ -13,12 +13,19 @@ For now, creation of wallet is handled through admin.
 
 <h4>Requirements:<h4>
 * Python==3.7.6
+ 
 * Django==2.2.3
+
 * django-fsm==2.6.1
+
 * django-fsm-admin==1.2.4
+
 * djangorestframework==3.10.0
+
 * gunicorn==19.9.0
+
 * pytz==2019.1
+
 * sqlparse==0.3.0
 
 
