@@ -1,4 +1,4 @@
-Django==2.2.3
+Django==2.2.20
 django-fsm==2.6.1
 django-fsm-admin==1.2.4
 djangorestframework==3.10.0
